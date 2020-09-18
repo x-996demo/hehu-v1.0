@@ -1,15 +1,31 @@
 <template>
-  <div>
-      <h1>我是主页</h1>
+  <div class="container">
+    <!-- 顶部栏组件 -->
+
+    <layout-header></layout-header>
+
+    <!-- 中间容器 -->
+
+    <!-- 底部组件 -->
+    <layout-footer></layout-footer>
   </div>
 </template>
 
 <script>
+import LayoutHeader from '@/components/home/layout-header' // 引入头部组件
+import LayoutFooter from '@/components/home/layout-footer' // 引入底部组件
 export default {
-
+  components: {
+    'layout-header': LayoutHeader,
+    'layout-footer': LayoutFooter
+  }
 }
 </script>
 
-<style>
-
+<style lang='less' scoped>
+.container {
+  background-image: url("../../assets/img/b2.png");
+  height: 100vh;
+  background-size: cover;
+}
 </style>

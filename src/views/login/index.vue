@@ -21,7 +21,7 @@
         <!-- 表单域 -->
         <el-form-item prop="checked">
           <!-- 是否同意隐私条款 -->
-          <el-checkbox v-model="loginForm.checked">我已阅读同意用户协议和隐私条款</el-checkbox>
+          <el-checkbox v-model="loginForm.checked" style="color:#ffffff">我已阅读同意用户协议和隐私条款</el-checkbox>
         </el-form-item>
         <el-form-item>
           <!-- 登录按钮 -->
@@ -111,8 +111,9 @@ export default {
   align-items: center;
   background-size: cover;
   .login-card {
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, .4);
     z-index: 2;
+    color: #ffffff;
     width: 440px;
     height: 340px;
     border: 1px solid #ccc;

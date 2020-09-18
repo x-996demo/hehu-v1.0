@@ -1,5 +1,10 @@
 <template>
-  <div class="bottom">这里是要悬浮的内容</div>
+  <div class="bottom">
+      <el-row>
+          <el-button type="primary" plain >资产管理</el-button>
+          <el-button type="primary" plain>运行维护</el-button>
+      </el-row>
+  </div>
 </template>
 
 <script>
@@ -14,7 +19,9 @@ export default {
        position: fixed;
        bottom: 0;
        width: 100%;
-       height: 100px;
+       height: 60px;
+       text-align: center;
        background: rgba(0, 0, 0, .3);
-   }
+
+  }
 </style>

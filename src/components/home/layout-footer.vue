@@ -1,7 +1,7 @@
 <template>
   <div class="bottom">
       <el-row>
-          <el-button type="primary" plain >资产管理</el-button>
+          <el-button type="primary" >资产管理</el-button>
           <el-button type="primary" plain>运行维护</el-button>
       </el-row>
   </div>

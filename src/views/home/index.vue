@@ -1,4 +1,6 @@
 <template>
+<div>
+  <!-- 北京城市河湖管理处 -->
   <span class="home">
     <!-- 北京市城市河湖管理处 -->
     <div class="box-card">
@@ -20,16 +22,26 @@
       </div>
     </div>
   </span>
+  <!-- 信息统计 -->
+  <info-spliders></info-spliders>
+</div>
 </template>
 
 <script>
-export default {}
+import infosplider from '@/components/infos/info-spliders' // 引入信息统计组件
+export default {
+  components: {
+    'info-spliders': infosplider
+
+  }
+}
 </script>
 
 <style lang='less' scoped>
 .home {
   position: absolute;
   top: 80px;
+  left: 10px;
   .box-card {
     background: rgba(0, 0, 0, 0.3);
     width: 300px;

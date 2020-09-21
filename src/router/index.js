@@ -10,7 +10,7 @@ const Maintain = () => import('@/views/maintain') // 按需引入maintain 二级
 const Login = () => import('@/views/login')
 const routes = [
   {
-    path: '',
+    path: '/layout',
     name: Home,
     component: Layout, // 布局组件 一级路由
     children: [{
@@ -23,7 +23,7 @@ const routes = [
 
     }]
   }, {
-    path: '/login',
+    path: '',
     component: Login
   }
 

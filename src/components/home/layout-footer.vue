@@ -1,9 +1,11 @@
 <template>
   <div class="bottom">
       <el-row>
-          <el-button type="primary" >资产管理</el-button>
-          <el-button type="primary" plain>运行维护</el-button>
+        <router-link  to="/home"><el-button type="primary" plain>资产管理</el-button></router-link>
+        <router-link class="btn" to="/maintain"><el-button type="primary" plain>运行维护</el-button></router-link>
+
       </el-row>
+
   </div>
 </template>
 
@@ -22,6 +24,9 @@ export default {
        height: 60px;
        text-align: center;
        background: rgba(0, 0, 0, .3);
+     .btn{
+       margin-left: 30px;
+     }
 
   }
 </style>

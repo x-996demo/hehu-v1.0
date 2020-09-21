@@ -1,15 +1,11 @@
 <template>
   <div id="app">
-
-    <router-view/>
+    <!-- 一级路由容器 -->
+    <router-view />
   </div>
 </template>
 <script>
-
-export default {
-
-}
+export default {}
 </script>
 <style lang="less">
-
 </style>

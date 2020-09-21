@@ -5,6 +5,7 @@
     class="el-menu-demo"
     default-active="1"
     text-color="#fff"
+    mode="horizontal"
       active-text-color="#ffd04b"
     >
 
@@ -22,6 +23,23 @@
 
       </el-menu-item>
         <el-menu-item index="4">
+
+        <span slot="title">导航二</span>
+      </el-menu-item>
+      <el-menu-item index="5">
+
+        <span slot="title">导航二</span>
+      </el-menu-item>
+        <el-menu-item index="6">
+
+        <span slot="title">导航二</span>
+
+      </el-menu-item>
+        <el-menu-item index="7">
+
+        <span slot="title">导航二</span>
+      </el-menu-item>
+      <el-menu-item index="8">
 
         <span slot="title">导航二</span>
       </el-menu-item>
@@ -43,7 +61,7 @@ export default {
   left: 10px;
   color: #ffffff;
   width: 300px;
-  height: 350px;
+  height: 272px;
   border: 1px solid #ffffff;
   cursor: pointer;
     .infos-tit {
@@ -57,7 +75,7 @@ export default {
 background: rgba(0,0, 0, .3);
   }
   li.el-menu-item {
-    width: 100px;
+    width: 148px;
   }
    li.el-menu-item:is-active,
    el-menu-item:active {

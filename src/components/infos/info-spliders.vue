@@ -2,56 +2,75 @@
   <div class="infos">
     <div class="infos-tit">信息统计</div>
     <el-menu
-    class="el-menu-demo"
-    default-active="1"
-    text-color="#fff"
-    mode="horizontal"
+      class="el-menu-demo"
+      default-active="1"
+      text-color="#fff"
+      mode="horizontal"
       active-text-color="#ffd04b"
     >
-
-  <el-menu-item index="1" style="">
-
-        <span slot="title">导航二<i>123</i></span>
+      <el-menu-item index="1" style>
+        <span class="btn">管理所</span>
+        <span slot="title" style="font-size:20px">
+          7
+          <i style="color:#ffffff;font-size:5px">个</i>
+        </span>
       </el-menu-item>
-      <el-menu-item index="2">
 
-        <span slot="title">导航二</span>
+      <el-menu-item index="2" style>
+        <span class="btn">河渠</span>
+        <span slot="title" style="font-size:20px">
+          13
+          <i style="color:#ffffff;font-size:5px">条</i>
+        </span>
       </el-menu-item>
-        <el-menu-item index="3">
-
-        <span slot="title">导航二</span>
-
+      <el-menu-item index="3" style>
+        <span class="btn">闸坝</span>
+        <span slot="title" style="font-size:20px">
+          24
+          <i style="color:#ffffff;font-size:5px">座</i>
+        </span>
       </el-menu-item>
-        <el-menu-item index="4">
-
-        <span slot="title">导航二</span>
+      <el-menu-item index="4" style>
+        <span class="btn">水文站</span>
+        <span slot="title" style="font-size:20px">
+          4
+          <i style="color:#ffffff;font-size:5px">座</i>
+        </span>
       </el-menu-item>
-      <el-menu-item index="5">
-
-        <span slot="title">导航二</span>
+       <el-menu-item index="5" style>
+        <span class="btn">场区</span>
+        <span slot="title" style="font-size:20px">
+          7
+          <i style="color:#ffffff;font-size:5px">个</i>
+        </span>
       </el-menu-item>
-        <el-menu-item index="6">
-
-        <span slot="title">导航二</span>
-
+  <el-menu-item index="6" style>
+        <span class="btn">打捞船</span>
+        <span slot="title" style="font-size:20px">
+          25
+          <i style="color:#ffffff;font-size:5px">艘</i>
+        </span>
       </el-menu-item>
-        <el-menu-item index="7">
-
-        <span slot="title">导航二</span>
+       <el-menu-item index="7" style>
+        <span class="btn">绿化</span>
+        <span slot="title" style="font-size:20px">
+          78.1
+          <i style="color:#ffffff;font-size:5px">km2</i>
+        </span>
       </el-menu-item>
-      <el-menu-item index="8">
-
-        <span slot="title">导航二</span>
+      <el-menu-item index="8" style>
+        <span class="btn">树木</span>
+        <span slot="title" style="font-size:20px">
+          7
+          <i style="color:#ffffff;font-size:5px">棵</i>
+        </span>
       </el-menu-item>
     </el-menu>
   </div>
 </template>
 
 <script>
-
-export default {
-
-}
+export default {}
 </script>
 
 <style lang='less' scoped>
@@ -64,29 +83,54 @@ export default {
   height: 272px;
   border: 1px solid #ffffff;
   cursor: pointer;
-    .infos-tit {
+  .infos-tit {
     height: 30px;
     // line-height: 30px;
     padding-left: 5px;
     background: rgba(0, 0, 139, 0.3);
     border-bottom: 1px solid #ffffff;
+    .num {
+      font-size: 25px;
+      color: blue;
+    }
   }
   .el-menu {
-background: rgba(0,0, 0, .3);
+    background: rgba(0, 0, 0, 0.3);
   }
   li.el-menu-item {
     width: 148px;
+    .btn {
+      display: inline-block;
+      width: 60px;
+      line-height: 50px;
+      text-align: center;
+      height: 50px;
+      border-radius: 5px;
+      background: rgba(0, 0, 139, 0.3);
+      border: 1px solid #4a7849;
+    }
   }
-   li.el-menu-item:is-active,
-   el-menu-item:active {
-    background: rgba(0,0, 0, .3);
+  li.el-menu-item:is-active,
+  el-menu-item:active {
+    background: rgba(0, 0, 0, 0.3);
   }
-  li.el-menu-item:focus,
-   el-menu-item:hover {
-    background: rgba(0,0, 0, .3);
+  li.el-menu-item:focus {
+    background: rgba(0, 0, 0, 0.3);
   }
   .el-menu-item {
-    background: rgba(0,0, 0, .3);
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  li.el-menu-item:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .el-menu--horizontal > .el-menu-item {
+    border-bottom: none;
+
+    text-align: center;
+  }
+  .el-menu--horizontal > .el-menu-item.is-active {
+    border-bottom: none;
   }
 }
 </style>

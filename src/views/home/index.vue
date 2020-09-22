@@ -24,15 +24,18 @@
   </span>
   <!-- 信息统计 -->
   <info-spliders></info-spliders>
+  <!-- tabs表格 -->
+  <!-- <infos-tabone></infos-tabone> -->
 </div>
 </template>
 
 <script>
 import infosplider from '@/components/infos/info-spliders' // 引入信息统计组件
+// import tabone from '@/components/tables/infos-tabone'
 export default {
   components: {
     'info-spliders': infosplider
-
+    // 'infos-tabone': tabone
   }
 }
 </script>

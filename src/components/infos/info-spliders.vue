@@ -8,13 +8,25 @@
       mode="horizontal"
       active-text-color="#ffd04b"
     >
-      <el-menu-item index="1" style>
+      <el-menu-item index="1" style @click="drawer = true">
         <span class="btn">管理所</span>
         <span slot="title" style="font-size:20px">
           7
           <i style="color:#ffffff;font-size:5px">个</i>
         </span>
       </el-menu-item>
+<!-- tabone 开始-->
+  <el-drawer title="我是标题"
+  :visible.sync="drawer"
+   :with-header="false"
+   :modal='false'
+
+   >
+    <!-- <span style="font-size:20px;margin-left:30px;top:50px">管理所</span> -->
+<infos-tabone></infos-tabone>
+
+  </el-drawer>
+  <!-- tabone 结束-->
 
       <el-menu-item index="2" style>
         <span class="btn">河渠</span>
@@ -37,21 +49,21 @@
           <i style="color:#ffffff;font-size:5px">座</i>
         </span>
       </el-menu-item>
-       <el-menu-item index="5" style>
+      <el-menu-item index="5" style>
         <span class="btn">场区</span>
         <span slot="title" style="font-size:20px">
           7
           <i style="color:#ffffff;font-size:5px">个</i>
         </span>
       </el-menu-item>
-  <el-menu-item index="6" style>
+      <el-menu-item index="6" style>
         <span class="btn">打捞船</span>
         <span slot="title" style="font-size:20px">
           25
           <i style="color:#ffffff;font-size:5px">艘</i>
         </span>
       </el-menu-item>
-       <el-menu-item index="7" style>
+      <el-menu-item index="7" style>
         <span class="btn">绿化</span>
         <span slot="title" style="font-size:20px">
           78.1
@@ -61,16 +73,33 @@
       <el-menu-item index="8" style>
         <span class="btn">树木</span>
         <span slot="title" style="font-size:20px">
-          7
+          141
           <i style="color:#ffffff;font-size:5px">棵</i>
         </span>
       </el-menu-item>
     </el-menu>
   </div>
+
 </template>
 
 <script>
-export default {}
+import tabone from '@/components/tables/infos-tabone'
+export default {
+  components: {
+    'infos-tabone': tabone
+  },
+  data () {
+    return {
+      drawer: true
+    }
+  },
+  methods: {
+    getRowClass ({ row, column, rowIndex, columnIndex }) {
+      return 'background:#3f5c6d2c;color:#000;'
+    }
+  }
+
+}
 </script>
 
 <style lang='less' scoped>
@@ -83,6 +112,18 @@ export default {}
   height: 272px;
   border: 1px solid #ffffff;
   cursor: pointer;
+ /deep/ .el-drawer__container{
+    top: 80px;
+    bottom: 80px;
+    height: 70%;
+    width: 115%;
+  }
+ /deep/ .el-drawer{
+    background: rgba(0, 0, 0, .3);
+  }
+/deep/  .el-drawer.btt, .el-drawer.ttb, .el-drawer__container {
+    width: 50%;
+  }
   .infos-tit {
     height: 30px;
     // line-height: 30px;
@@ -132,5 +173,9 @@ export default {}
   .el-menu--horizontal > .el-menu-item.is-active {
     border-bottom: none;
   }
+   /deep/ .el-table tr {
+    background-color: transparent;
 }
+}
+
 </style>

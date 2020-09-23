@@ -84,6 +84,8 @@ export default {
   border: 1px solid #ffffff;
   width: 340px;
   height: 450px;
+  margin-left: 200px;
+  margin-top: 80px;
   background-color: rgba(0, 0, 0, 0.3);
   .el-tooltip__popper{max-width: 90px}
   span {

@@ -20,7 +20,7 @@
   :visible.sync="drawer"
    :with-header="false"
    :modal='false'
-
+   :before-close="handleClose"
    >
     <!-- <span style="font-size:20px;margin-left:30px;top:50px">管理所</span> -->
 <infos-tabone></infos-tabone>
@@ -90,12 +90,19 @@ export default {
   },
   data () {
     return {
-      drawer: true
+      drawer: false
     }
   },
   methods: {
     getRowClass ({ row, column, rowIndex, columnIndex }) {
       return 'background:#3f5c6d2c;color:#000;'
+    },
+    handleClose (done) {
+      this.$confirm('如果想进行操作,请关闭当前表格,确定关闭吗？')
+        .then(_ => {
+          done()
+        })
+        .catch(_ => {})
     }
   }
 
@@ -112,14 +119,15 @@ export default {
   height: 272px;
   border: 1px solid #ffffff;
   cursor: pointer;
- /deep/ .el-drawer__container{
-    top: 80px;
-    bottom: 80px;
-    height: 70%;
-    width: 115%;
-  }
+//  /deep/ .el-drawer__container{
+//     top: 80px;
+//     bottom: 80px;
+//     height: 70%;
+//     width: 115%;
+//   }
  /deep/ .el-drawer{
-    background: rgba(0, 0, 0, .3);
+    // background: rgba(0, 0, 0, .3);
+    background: transparent;
   }
 /deep/  .el-drawer.btt, .el-drawer.ttb, .el-drawer__container {
     width: 50%;

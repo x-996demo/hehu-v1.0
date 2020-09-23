@@ -21,7 +21,7 @@ export default {
 
 <style lang='less' scoped>
    .top {
-       position: relative;
+    //    position: relative;
        left: 0;
        position: fixed;
        top: 0;

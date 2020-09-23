@@ -5,9 +5,13 @@
     <layout-header></layout-header>
 
     <!-- 中间容器 -->
+
     <div class="my-wrapper">
+      <keep-alive>
         <router-view></router-view>
+      </keep-alive>
     </div>
+
     <!-- 底部组件 -->
     <layout-footer></layout-footer>
   </div>

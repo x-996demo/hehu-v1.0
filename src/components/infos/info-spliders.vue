@@ -8,7 +8,7 @@
       mode="horizontal"
       active-text-color="#ffd04b"
     >
-      <el-menu-item index="1" style @click="drawer = true">
+      <el-menu-item index="1" style @click="ManagementOffice = true">
         <span class="btn">管理所</span>
         <span slot="title" style="font-size:20px">
           7
@@ -16,8 +16,8 @@
         </span>
       </el-menu-item>
 <!-- tabone 开始-->
-  <el-drawer title="我是标题"
-  :visible.sync="drawer"
+  <el-drawer
+  :visible.sync="ManagementOffice"
    :with-header="false"
    :modal='false'
    :before-close="handleClose"
@@ -28,20 +28,44 @@
   </el-drawer>
   <!-- tabone 结束-->
 
-      <el-menu-item index="2" style>
+      <el-menu-item index="2" style @click="Canal = true">
         <span class="btn">河渠</span>
         <span slot="title" style="font-size:20px">
           13
           <i style="color:#ffffff;font-size:5px">条</i>
         </span>
       </el-menu-item>
-      <el-menu-item index="3" style>
+      <!-- tabtwo 开始-->
+  <el-drawer
+  :visible.sync="Canal"
+   :with-header="false"
+   :modal='false'
+   :before-close="handleClose"
+   >
+    <!-- <span style="font-size:20px;margin-left:30px;top:50px">管理所</span> -->
+<infos-tabtwo></infos-tabtwo>
+
+  </el-drawer>
+  <!-- tabtwo 结束-->
+      <el-menu-item index="3" style  @click="Sluicedam = true">
         <span class="btn">闸坝</span>
         <span slot="title" style="font-size:20px">
           24
           <i style="color:#ffffff;font-size:5px">座</i>
         </span>
       </el-menu-item>
+       <!-- tabthree 开始-->
+  <el-drawer
+  :visible.sync="Sluicedam"
+   :with-header="false"
+   :modal='false'
+   :before-close="handleClose"
+   >
+    <!-- <span style="font-size:20px;margin-left:30px;top:50px">管理所</span> -->
+<infos-tabthree></infos-tabthree>
+
+  </el-drawer>
+  <!-- tabthree 结束-->
       <el-menu-item index="4" style>
         <span class="btn">水文站</span>
         <span slot="title" style="font-size:20px">
@@ -83,14 +107,20 @@
 </template>
 
 <script>
-import tabone from '@/components/tables/infos-tabone'
+import tabone from '@/components/tables/infos-tabone' // 引入管理所表组件
+import tabtwo from '@/components/tables/infos-tabtwo' // 引入河渠表组件
+import tabthree from '@/components/tables/infos-tabthree' // 引入河渠表组件
 export default {
   components: {
-    'infos-tabone': tabone
+    'infos-tabone': tabone,
+    'infos-tabtwo': tabtwo,
+    'infos-tabthree': tabthree
   },
   data () {
     return {
-      drawer: false
+      ManagementOffice: false,
+      Canal: false,
+      Sluicedam: false
     }
   },
   methods: {
@@ -125,12 +155,25 @@ export default {
 //     height: 70%;
 //     width: 115%;
 //   }
+ /deep/ section {
+
+  width: 0;
+
+}
+/deep/ .el-drawer.rtl {
+  width: 20%!important;
+}
  /deep/ .el-drawer{
     // background: rgba(0, 0, 0, .3);
     background: transparent;
   }
+
 /deep/  .el-drawer.btt, .el-drawer.ttb, .el-drawer__container {
     width: 50%;
+  }
+  /deep/ .el-drawer__wrapper {
+   bottom: 60px!important;
+  //  left: 120px!important;
   }
   .infos-tit {
     height: 30px;

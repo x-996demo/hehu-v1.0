@@ -7,7 +7,8 @@ const Layout = () => import('@/views/layout') // 按需引入layout 二级路由
 const Home = () => import('@/views/home') // 按需引入home 二级路由
 const Maintain = () => import('@/views/maintain') // 按需引入maintain 二级路由
 // 其他一级路由
-const Login = () => import('@/views/login')
+const Login = () => import('@/views/login') // 登录 一级路由
+const Details = () => import('@/views/details') // 闸门详情页面 一级路由
 const routes = [
   {
     path: '/layout',
@@ -25,6 +26,9 @@ const routes = [
   }, {
     path: '',
     component: Login
+  }, {
+    path: '/details',
+    component: Details
   }
 
 ]

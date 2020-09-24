@@ -138,9 +138,9 @@ export default {
       // this.showtwo = !this.showtwo
     },
     river () {
-      this.showthree = false
-      this.show = false
       this.showtwo = !this.showtwo
+      this.show = false
+      this.showthree = false
     },
     cancel () {
       this.showthree = !this.showthree

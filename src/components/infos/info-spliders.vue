@@ -8,7 +8,7 @@
       mode="horizontal"
       active-text-color="#ffd04b"
     >
-      <el-menu-item index="1" style @click="ManagementOffice = true">
+      <el-menu-item index="1" style @click="ManagementOffice=!ManagementOffice">
         <span class="btn">管理所</span>
         <span slot="title" style="font-size:20px">
           7
@@ -16,17 +16,8 @@
         </span>
       </el-menu-item>
 <!-- tabone 开始-->
-  <el-drawer
-  :visible.sync="ManagementOffice"
-   :with-header="false"
-   :modal='false'
-   :before-close="handleClose"
-   >
-    <!-- <span style="font-size:20px;margin-left:30px;top:50px">管理所</span> -->
-<infos-tabone></infos-tabone>
-
-  </el-drawer>
-  <!-- tabone 结束-->
+<!-- <infos-tabone></infos-tabone> -->
+<!-- tabone 结束-->
 
       <el-menu-item index="2" style @click="Canal = true">
         <span class="btn">河渠</span>
@@ -36,18 +27,11 @@
         </span>
       </el-menu-item>
       <!-- tabtwo 开始-->
-  <el-drawer
-  :visible.sync="Canal"
-   :with-header="false"
-   :modal='false'
-   :before-close="handleClose"
-   >
-    <!-- <span style="font-size:20px;margin-left:30px;top:50px">管理所</span> -->
-<infos-tabtwo></infos-tabtwo>
 
-  </el-drawer>
+<!-- <infos-tabtwo></infos-tabtwo> -->
+
   <!-- tabtwo 结束-->
-      <el-menu-item index="3" style  @click="Sluicedam = true">
+      <el-menu-item index="3" style  @click="Sluicedam">
         <span class="btn">闸坝</span>
         <span slot="title" style="font-size:20px">
           24
@@ -55,16 +39,7 @@
         </span>
       </el-menu-item>
        <!-- tabthree 开始-->
-  <el-drawer
-  :visible.sync="Sluicedam"
-   :with-header="false"
-   :modal='false'
-   :before-close="handleClose"
-   >
-    <!-- <span style="font-size:20px;margin-left:30px;top:50px">管理所</span> -->
-<infos-tabthree></infos-tabthree>
-
-  </el-drawer>
+<!-- <infos-tabthree></infos-tabthree>  -->
   <!-- tabthree 结束-->
       <el-menu-item index="4" style>
         <span class="btn">水文站</span>
@@ -107,33 +82,22 @@
 </template>
 
 <script>
-import tabone from '@/components/tables/infos-tabone' // 引入管理所表组件
-import tabtwo from '@/components/tables/infos-tabtwo' // 引入河渠表组件
-import tabthree from '@/components/tables/infos-tabthree' // 引入河渠表组件
+// import tabone from '@/components/tables/infos-tabone' // 引入管理所表组件
+// import tabtwo from '@/components/tables/infos-tabtwo' // 引入河渠表组件
+// import tabthree from '@/components/tables/infos-tabthree' // 引入河渠表组件
 export default {
-  components: {
-    'infos-tabone': tabone,
-    'infos-tabtwo': tabtwo,
-    'infos-tabthree': tabthree
-  },
+  // components: {
+  //   'infos-tabone': tabone,
+  //   'infos-tabtwo': tabtwo,
+  //   'infos-tabthree': tabthree
+  // },
   data () {
     return {
-      ManagementOffice: false,
-      Canal: false,
-      Sluicedam: false
+
     }
   },
   methods: {
-    getRowClass ({ row, column, rowIndex, columnIndex }) {
-      return 'background:#3f5c6d2c;color:#000;'
-    },
-    handleClose (done) {
-      this.$confirm('如果想进行操作,请关闭当前表格,确定关闭吗？')
-        .then(_ => {
-          done()
-        })
-        .catch(_ => {})
-    }
+
   }
 
 }

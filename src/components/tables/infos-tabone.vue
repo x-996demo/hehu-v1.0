@@ -84,12 +84,15 @@ export default {
   border: 1px solid #ffffff;
   width: 340px;
   height: 450px;
+   margin-right: 10px;
+   float: right;
   // margin-left: 200px;
   margin-top: 80px;
   background-color: rgba(0, 0, 0, 0.3);
   .el-tooltip__popper{max-width: 90px}
   span {
     font-size: 20px;
+     color: #ffffff;
     margin-left: 20px;
   }
 
@@ -119,5 +122,8 @@ export default {
 .el-table__expanded-cell {
   background-color: #3f5c6d2c;
   color: #ffffff;
+}
+ /deep/.el-table tr {
+  background: transparent!important;
 }
 </style>

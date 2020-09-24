@@ -1,5 +1,6 @@
 <template>
-  <div class="content">
+
+    <div class="content">
     <span>闸坝</span>
 
     <el-table
@@ -19,6 +20,7 @@
       <el-table-column prop="details" label="详细" width="69"></el-table-column>
     </el-table>
   </div>
+
 </template>
 
 <script>
@@ -206,8 +208,11 @@ export default {
 </script>
 
 <style lang='less' scoped>
+
 .content {
   border: 1px solid #ffffff;
+  float: right;
+  margin-right: 10px;
   width: 340px;
   height: 450px;
   // margin-left: 200px;
@@ -216,6 +221,7 @@ export default {
   .el-tooltip__popper{max-width: 90px}
   span {
     font-size: 20px;
+    color: #ffffff;
     margin-left: 20px;
   }
 
@@ -245,5 +251,8 @@ export default {
 .el-table__expanded-cell {
   background-color: #3f5c6d2c;
   color: #ffffff;
+}
+ /deep/.el-table tr {
+  background: transparent!important;
 }
 </style>

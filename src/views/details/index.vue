@@ -38,7 +38,7 @@
           <i style="color:#ffffff;font-size:5px">间</i>
         </span>
       </el-menu-item>
-       <el-menu-item index="2" style  >
+       <el-menu-item index="2" style  @click="gate">
         <span class="btn">闸门</span>
         <span slot="title" style="font-size:20px">
           3
@@ -120,23 +120,28 @@
 
   </div>
     <!-- 房屋-工程信息 -->
-    <infos-house v-show="show"></infos-house>
+    <infos-house v-show="showhouse"></infos-house>
+    <!-- 闸门-工程信息 -->
+    <infos-gate v-show="showgate"></infos-gate>
   </div>
 </template>
 
 <script>
 import LayoutHeader from '@/components/home/layout-header' // 引入头部组件
 // import infosLT from '@/components/infos/infos-LT'
-import tabhouse from '@/components/tables/infos-house'
+import tabhouse from '@/components/tables/infos-house' // 引入房屋表组件
+import tabgate from '@/components/tables/infos-gate'
 export default {
   components: {
     'layout-header': LayoutHeader,
     // 'infos-LT': infosLT,
-    'infos-house': tabhouse
+    'infos-house': tabhouse,
+    'infos-gate': tabgate
   },
   data () {
     return {
-      show: false
+      showhouse: false,
+      showgate: false
     }
   },
   methods: {
@@ -144,7 +149,12 @@ export default {
       this.$router.go(-1)
     },
     house () {
-      this.show = !this.show
+      this.showhouse = !this.showhouse
+      this.showgate = false
+    },
+    gate () {
+      this.showgate = !this.showgate
+      this.showhouse = false
     }
   }
 }

@@ -15,7 +15,7 @@
       row-key="id"
       :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
       :cell-style="{padding: '4px'}"
-
+      :span-method="arraySpanMethod"
     >
 
       <el-table-column prop="name" label="项目" width="110" :show-overflow-tooltip="true"></el-table-column>
@@ -204,6 +204,15 @@ export default {
   methods: {
     getRowClass ({ row, column, rowIndex, columnIndex }) {
       return 'background: rgba(0, 0, 0, .1);color:#ffffff;'
+    },
+    arraySpanMethod ({ row, column, rowIndex, columnIndex }) {
+      if (rowIndex >= 29) {
+        if (columnIndex === 0) {
+          return [1, 3]
+        } else if (columnIndex === 1) {
+          return [0, 0]
+        }
+      }
     },
     load (tree, treeNode, resolve) {
       setTimeout(() => {

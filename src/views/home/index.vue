@@ -34,7 +34,7 @@
     >
       <el-menu-item index="1" style @click="ManagementOffice">
         <span class="btn">管理所</span>
-        <span slot="title" style="font-size:20px">
+        <span slot="title" style="font-size:20px" class="title">
           7
           <i style="color:#ffffff;font-size:5px">个</i>
         </span>
@@ -45,7 +45,7 @@
 
       <el-menu-item index="2" style @click="river">
         <span class="btn">河渠</span>
-        <span slot="title" style="font-size:20px">
+        <span slot="title" style="font-size:20px" class="title">
           13
           <i style="color:#ffffff;font-size:5px">条</i>
         </span>
@@ -57,7 +57,7 @@
   <!-- tabtwo 结束-->
       <el-menu-item index="3" style @click="cancel" >
         <span class="btn">闸坝</span>
-        <span slot="title" style="font-size:20px">
+        <span slot="title" style="font-size:20px" class="title">
           24
           <i style="color:#ffffff;font-size:5px">座</i>
         </span>
@@ -67,35 +67,35 @@
   <!-- tabthree 结束-->
       <el-menu-item index="4" style>
         <span class="btn">水文站</span>
-        <span slot="title" style="font-size:20px">
+        <span slot="title" style="font-size:20px" class="title">
           4
           <i style="color:#ffffff;font-size:5px">座</i>
         </span>
       </el-menu-item>
       <el-menu-item index="5" style>
         <span class="btn">场区</span>
-        <span slot="title" style="font-size:20px">
+        <span slot="title" style="font-size:20px" class="title">
           7
           <i style="color:#ffffff;font-size:5px">个</i>
         </span>
       </el-menu-item>
       <el-menu-item index="6" style>
         <span class="btn">打捞船</span>
-        <span slot="title" style="font-size:20px">
+        <span slot="title" style="font-size:20px" class="title">
           25
           <i style="color:#ffffff;font-size:5px">艘</i>
         </span>
       </el-menu-item>
       <el-menu-item index="7" style>
         <span class="btn">绿化</span>
-        <span slot="title" style="font-size:20px">
+        <span slot="title" style="font-size:20px" class="title">
           78.1
           <i style="color:#ffffff;font-size:5px">km2</i>
         </span>
       </el-menu-item>
-      <el-menu-item index="8" style>
+      <el-menu-item index="8" style >
         <span class="btn">树木</span>
-        <span slot="title" style="font-size:20px">
+        <span slot="title" style="font-size:20px" class="title" >
           141
           <i style="color:#ffffff;font-size:5px">棵</i>
         </span>
@@ -258,6 +258,9 @@ export default {
   width: 0;
 
 }
+.el-menu-item {
+  padding:0!important;
+}
 /deep/ .el-drawer.rtl {
   width: 20%!important;
 }
@@ -293,11 +296,16 @@ export default {
       display: inline-block;
       width: 60px;
       line-height: 50px;
+
       text-align: center;
       height: 50px;
       border-radius: 5px;
       background: rgba(0, 0, 139, 0.3);
       border: 1px solid #4a7849;
+    }
+    .title {
+      display: inline-block;
+      width: 50px;
     }
   }
   li.el-menu-item:is-active,

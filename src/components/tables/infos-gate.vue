@@ -16,6 +16,7 @@
       :tree-props="{children: 'children', hasChildren: 'hasChildren'}"
       :cell-style="{padding: '4px'}"
       :span-method="arraySpanMethod"
+
     >
 
       <el-table-column prop="name" label="项目" width="110" :show-overflow-tooltip="true"></el-table-column>
@@ -25,13 +26,18 @@
       <!-- <el-table-column prop="" label="水工建筑师" width="319"></el-table-column> -->
 
     </el-table>
+    <!-- 弹层 -->
+
   </div>
+
 </template>
 
 <script>
 export default {
   data () {
     return {
+      dialogVisible: true,
+
       tableData: [
         {
           id: 1,

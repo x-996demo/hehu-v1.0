@@ -7,7 +7,7 @@
       height="450"
       :data="tableData"
       border
-      style="width: 370px; padding:5px;margin-left:10px;margin-top:10px"
+      style="width: 320px; padding:5px;margin-left:10px;margin-top:10px"
       :row-style="getRowClass"
       :header-row-style="getRowClass"
       :header-cell-style="getRowClass"
@@ -22,7 +22,7 @@
     >
 
       <el-table-column prop="name" label="项目" width="170" :show-overflow-tooltip="true"></el-table-column>
-      <el-table-column prop="content" label="内容" width="129" :show-overflow-tooltip="true"></el-table-column>
+      <el-table-column prop="content" label="内容" width="70" :show-overflow-tooltip="true"></el-table-column>
 
       <el-table-column prop="details" label="备注" width="70"></el-table-column>
 

@@ -198,6 +198,10 @@ export default {
         this.$router.push({
           path: '/details'
         })
+      } else if (row.num === '1') {
+        this.$router.push({
+          path: '/detailsSJD'
+        })
       } else {
         return false
       }
